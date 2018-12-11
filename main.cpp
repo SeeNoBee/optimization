@@ -6,6 +6,7 @@ using namespace std;
 
 void mult(unsigned int size, const float** a, const float** b, float **result)
 {
+	#pragma omp parallel for
 	for (unsigned int i = 0; i < size; ++i)
 		for (unsigned int k = 0; k < size; ++k)
 			#pragma ivdep
