@@ -8,6 +8,7 @@ void mult(unsigned int size, const float** a, const float** b, float **result)
 {
 	for (unsigned int i = 0; i < size; ++i)
 		for (unsigned int k = 0; k < size; ++k)
+			#pragma ivdep
 			for (unsigned int j = 0; j < size; ++j)
 				result[i][j] += a[i][k] * b[k][j];
 }
